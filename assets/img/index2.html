@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Сайт</title>
+	<link rel="stylesheet" href="css/style2.css" />
+	<!--  Библеотека jquery -->
+	<script type="text/javascript" src="js/jquery.1.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			// Фикмированная шапка при скролле
+			$("#header").removeClass("default");
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 20) {
+					$("#header").addClass("default").fadeIn('fast');
+				} else {
+					$("#header").removeClass("default").fadeIn('fast');
+				};
+			});
+
+			// Плавный скролл по якорям
+			$('a[href^="#"]').click(function () { 
+			    elementClick = $(this).attr("href");
+				destination = $(elementClick).offset().top;
+				if($.browser.safari){
+				$('body').animate( { scrollTop: destination }, 1000 );
+				} else {
+			    	$('html').animate( { scrollTop: destination }, 1000 );
+				}
+				return false;
+		   });
+		});
+	</script>
+</head>
+<body>
+	
+	<div id="wrapper">
+		<div id="header" class="clearfix">
+			<div class="container">
+				<div class="logo"><a href="#"><img src="img/logo.png" alt="" /></a></div>
+				<ul class="nav">
+					<li><a href="#home">Home</a></li>
+					<li><a href="#services">Services</a></li>
+					<li><a href="#portfolio">Portfolio</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="home" mame="home">
+			<div class="container">
+				<h3>Welcome To Our Studio!</h3>
+				<h1>It’s nice to Meet you</h1>
+				<a href="#" class="btn btn-warning">Tell me more</a>
+			</div>
+		</div>
+
+		<div id="services" name="services">
+			<div class="container">
+				<h2 class="title">Services</h2>
+				<p class="descr">Proin iaculis purus consequat sem cure.</p>
+
+				<div class="clearfix services-wrap">
+					<div class="services-item commerce">
+						<h5 class="title"><a href="#">E-Commerce</a></h5>
+						<p class="descr">Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit<br /> aenean rhoncus posuere odio in tincidunt.</p>
+					</div>
+					<div class="services-item responsive">
+						<h5 class="title"><a href="#">E-Commerce</a></h5>
+						<p class="descr">Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit<br /> aenean rhoncus posuere odio in tincidunt.</p>
+					</div>
+					<div class="services-item security">
+						<h5 class="title"><a href="#">E-Commerce</a></h5>
+						<p class="descr">Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit<br /> aenean rhoncus posuere odio in tincidunt.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="portfolio" name="portfolio">
+			<div class="container">
+				<h2 class="title">Our portfolio</h2>
+				<p class="descr">Proin iaculis purus consequat sem cure. </p>
+			</div>
+		</div>
+	</div>
+
+</body>
