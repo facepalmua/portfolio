@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale= 1.0, user-scalable=no">
+    <title>Statystic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+    google.charts.load('current', {
+        'packages': ['bar']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+            ['Дни', 'Просмотры'],
+            ['1', 1000],
+            ['2', 1170],
+            ['3', 660],
+            ['4', 1030],
+            ['5', 1200],
+            ['6', 1000],
+            ['7', 1170],
+            ['8', 660],
+            ['9', 1030],
+            ['10', 1200]
+
+        ]);
+
+        var options = {
+            chart: {
+                title: 'Статистика',
+                subtitle: 'Количество просмотров за: 1/14/2017-1/24/2017',
+            }
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+
+        chart.draw(data, options);
+    }
+    </script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="logo"><a href="#">God<span><i>damn</i></span></a></div>
+    </div>
+    <!-- end header -->
+    <a class="mobile" href="#">MENU</a>
+    <div id="container">
+        <sidebar>
+            <ul id="nav">
+                <li>
+                    <a href="index.html" class="selected">Статистика</a>
+                </li>
+                <li>
+                    <a href="add_to_portfolio.html">Добавления в портфолио</a>
+                </li>
+                <li>
+                    <a href="message.html">Сообщения</a>
+                </li>
+            </ul>
+        </sidebar>
+        <div class="content">
+            <h1>Статистика</h1>
+            <p>Количество заходов на страницу по данным Google Analytics</p>
+            <div id="box">
+                <div class="box-top">Просмотры</div>
+                <div class="box-panel">
+                    <div id="columnchart_material" style="width: 900px; height: 500px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="javascript/jeneral.js"></script>
+</body>
+
+</html>
